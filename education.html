@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Seeds Of Solidarity</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="_js/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var newPhoto = new Image();
+        newPhoto.src = "images/kids-gardening.jpg";
+        var oldSrc = $("#photo").attr("src");
+        $("#photo").hover(
+          function() {
+            $(this).attr("src", newPhoto.src);
+          },
+          function() {
+            $(this).attr("src", oldSrc);
+          }
+        );
+      }); //end ready
+    </script>
+  </head>
+
+  <body>
+    <nav class="nav-main">
+      <div class="logo_container">
+        <a href="index.html"
+          ><img src="images/SeedsLogo.png" width="90" height="80"
+        /></a>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#" class="nav-item">About</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="community.html">Community</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#" class="nav-item">Education</a>
+          <a href="thefarm.html" class="nav-item">The Farm</a>
+          <a href="media.html" class="nav-item">Media</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <img
+        style="display: block; margin-left: auto; margin-right: auto;"
+        src="images/Seeds4cr.jpg"
+        width="100%"
+        height="150"
+      />
+      <h1>EDUCATION PROGRAMS</h1>
+      <br />
+      <p>
+        As a small and strongly community rooted organization in a region, we
+        focus on initiatives that foster health, justice and food and energy
+        resiliency in our own region, which has both tremendous economic and
+        health needs and great potential to survive and thrive.
+      </p>
+      <br />
+      <img
+        id="photo"
+        style="display: block; margin-left: auto; margin-right: auto;"
+        src="images/kids-gardening2.jpg"
+        width="280"
+      /><br /><br />
+
+      <h5 align="center">
+        SOL(Seeds of Leadership) Garden for North Quabbin Teens
+      </h5>
+      <p align="center">
+        The Annual North Quabbin Food Forum held each February, that unites
+        residents of our nine-town region to build community and food
+        resiliency.
+      </p>
+      <br />
+      <h5 align="center">Grow Food Everywhere for Health and Justice</h5>
+      <p align="center">
+        Our program that provides gardens to families and childcare centers in
+        need of, and unable to afford fresh food, and wellness gardens at
+        central community locations.
+      </p>
+      <br />
+      <h5 align="center">School Garden</h5>
+      <p align="center">workshops and resources</p>
+      <br />
+      <h5 align="center">The North Quabbin Garlic and Arts Festival</h5>
+      <p align="center">
+        A festival that we organize with our neighbors, a scent-sational,
+        environmentally innovative event that ignites the cultural, local,
+        economic, and agricultural vitality of our region.
+      </p>
+    </div>
+    <br /><br />
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Seeds Of Solidarity</title>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="_css/site.css" rel="stylesheet" />
+    <link href="_css/jquery-ui.min.css" rel="stylesheet" />
+
+    <style>
+      .ui-menu {
+        width: 20%;
+      }
+
+      .ui-menu .ui-menu {
+        width: 100%;
+      }
+
+      #signup label.error {
+        font-size: 0.8em;
+        color: #186a3b;
+        font-weight: bold;
+        display: block;
+        margin-left: 215px;
+      }
+      #signup input.error,
+      #signup select.error {
+        background: #f36756;
+        border: 1px solid #186a3b;
+      }
+    </style>
+
+    <script src="_js/jquery.min.js"></script>
+    <script src="_js/jquery-ui.min.js"></script>
+    <script src="jquery_validate/jquery.validate.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        var newPhoto = new Image();
+        newPhoto.src = "images/debandrick.jpg";
+        var oldSrc = $("#photo").attr("src");
+        $("#photo").hover(
+          function() {
+            $(this).attr("src", newPhoto.src);
+          },
+          function() {
+            $(this).attr("src", oldSrc);
+          }
+        );
+      }); //end ready
+
+      $(document).ready(function() {
+        $("#signup").validate({
+          rules: {
+            email: {
+              required: true,
+              email: true
+            }
+          }, //end rules
+          messages: {
+            email: {
+              required: "Please supply an e-mail address.",
+              email:
+                "This is not a valid email address. Email will not be sent. Please re-enter a vaid e-mail address."
+            }
+          },
+          errorPlacement: function(error, element) {
+            if (element.is(":radio") || element.is(":checkbox")) {
+              error.appendTo(element.parent());
+            } else {
+              error.insertAfter(element);
+            }
+          }
+        }); // end validate
+
+        $("#submit").click(function(event) {
+          var useremail = $("#email").val();
+          if (
+            useremail.toLocaleLowerCase().endsWith(".com") ||
+            useremail.toLocaleLowerCase().endsWith(".org") ||
+            useremail.toLocaleLowerCase().endsWith(".net")
+          ) {
+          } else {
+            alert(
+              "**MESSAGE WILL NO BE SENT** Please enter an email address that ends with a domain of '.com', '.org', or '.net'."
+            );
+            event.preventDefault();
+            $("#email").focus();
+          }
+        }); //end email domain check
+      }); // end ready
+
+      $(document).ready(function() {
+        $("#menu").menu();
+      }); // end ready
+    </script>
+  </head>
+
+  <body>
+    <nav class="nav-main">
+      <div class="logo_container">
+        <a href="index.html"
+          ><img src="images/SeedsLogo.png" width="90" height="80"
+        /></a>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#" class="nav-item">About</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="community.html">Community</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="education.html" class="nav-item">Education</a>
+          <a href="thefarm.html" class="nav-item">The Farm</a>
+          <a href="media.html" class="nav-item">Media</a>
+        </li>
+      </ul>
+    </nav>
+
+    <br />
+    <div class="content2">
+      <img
+        style="display: block; margin-left: auto; margin-right: auto;"
+        src="images/Seeds3.jpg"
+        width="100%"
+        height="150"
+      /><br />
+      <ul id="menu">
+        <li>
+          <a href="#">About Us</a>
+          <ul>
+            <li><a href="community.html">Community</a></li>
+          </ul>
+        </li>
+      </ul>
+      <br />
+      <p>
+        Seeds of Solidarity consists of two entities that are fiscally distinct,
+        but connected by land, spirit and vision: Seeds of Solidarity Farm, and
+        Seeds of Solidarity Education Center Inc, a 501 c 3 non-profit
+        organization with a passionate staff of 4, a sage board of directors,
+        and wonderful community partnerships.
+      </p>
+      <br />
+      <p>
+        <img
+          id="photo"
+          style="float: right; margin: 0px 10px 5px 5px;"
+          src="images/debandrick2.jpg"
+          width="280"
+        />Seeds of Solidarity was founded by Ricky Baruc and Deb Habib who met
+        in 1984 while working at the New Alchemy Institute on Cape Cod MA, a
+        small international organization whose purpose was to “design
+        human-scale, low polluting alternatives to super technology and to
+        design and test intensive food growing methods." New Alchemy’s impact on
+        Ricky and Deb’s lives and that of many others was profound. They spent
+        the next decade or so farming (Ricky) and working in the fields of
+        multicultural and environmental education (Deb). Then in 1994/1995 took
+        part in the International Pilgrimage for Peace and Life, walking from
+        Auschwitz to Hiroshima. Seeds of Solidarity Farm and Education Center
+        was initiated in 1996, in the spirit of New Alchemy and in honor of
+        those around the world helping to feed the people.
+      </p>
+      <br />
+      <p>
+        The Seeds of Solidarity 30 acre site is located on Chestnut Hill Road in
+        Orange, Massachusetts, one of nine towns in the North Quabbin region.
+        The Quabbin Reservoir was created in the late 1930’s as a water supply
+        for Boston. The flooding of four towns and a fertile valley took much of
+        the region’s agricultural land out of production. When the mills began
+        to close, economic depression was left in the wake. Through the
+        transformation of abandoned land into a bountiful farm, working with
+        neighbors to initiate a flourishing festival, and establishing
+        innovative education programs, Seeds of Solidarity is helping to
+        revitalize the region.
+      </p>
+    </div>
+    <br /><br />
+
+    <h6 align="center">Contact Us</h6>
+    <br />
+
+    <div class="content">
+      <form action="about.html" method="post" name="signup" id="signup">
+        <div class="content">
+          <label for="name" class="label">Name</label>
+          <input
+            name="name"
+            type="text"
+            class="required"
+            id="name"
+            title="Please type your name."
+          />
+        </div>
+
+        <div class="content">
+          <label for="email" class="label">Email</label>
+          <input name="email" type="text" id="email" />
+        </div>
+
+        <div class="content">
+          <label for="comments" class="label">Message</label>
+          <textarea
+            name="comments"
+            cols="25"
+            rows="2.5"
+            id="comments"
+          ></textarea>
+        </div>
+
+        <div class="content">
+          <input type="submit" name="submit" id="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+    <br /><br />
+  </body>
+</html>
